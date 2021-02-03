@@ -16,6 +16,7 @@ on:
 env:
   OFP_LINK: https://down-cloud.rbinternationalnetwork.workers.dev//RMX2185_11_A.79_201104_e6e6c09b.ofp
   OFP_NAME: RMX2185_11_A.79_201104_e6e6c09b.ofp
+  ZIP_NAME: RMX2185_11_A.79_201104_e6e6c09b.zip
   TZ: Asia/Kolkata
 
 jobs:
@@ -42,6 +43,10 @@ jobs:
              sudo -E apt-get -qq update
              sudo pip install docopt
              sudo pip install pycryptodome
+             sudo apt-get install unzip
+             unzip $ZIP_NAME -d out
+             rm -rf $ZIP_NAME
+             cd out
              wget https://raw.githubusercontent.com/bkerler/oppo_decrypt/master/ofp_mtk_decrypt.py
              sudo python3 ofp_mtk_decrypt.py $OFP_NAME out
              
