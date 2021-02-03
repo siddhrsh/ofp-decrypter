@@ -14,9 +14,9 @@ on:
     types: [started]
 
 env:
-  OFP_LINK: https://down-cloud.rbinternationalnetwork.workers.dev//RMX2185_11_A.79_201104_e6e6c09b.ofp
-  OFP_NAME: RMX2185_11_A.79_201104_e6e6c09b.ofp
-  ZIP_NAME: RMX2185_11_A.79_201104_e6e6c09b.zip
+  OFP_LINK: https://fileload.coloros.com/31742RMX1941EX_11_A.31_201216_cf366f35.zip
+  OFP_NAME: RMX1941EX_11_A.31_201216_cf366f35.ofp
+  ZIP_NAME: 31742RMX1941EX_11_A.31_201216_cf366f35.zip
   TZ: Asia/Kolkata
 
 jobs:
@@ -48,7 +48,7 @@ jobs:
              rm -rf $ZIP_NAME
              cd out
              wget https://raw.githubusercontent.com/bkerler/oppo_decrypt/master/ofp_mtk_decrypt.py
-             sudo python3 ofp_mtk_decrypt.py $OFP_NAME out
+             sudo python3 ofp_mtk_decrypt.py *.ofp out
              
        - name: Compress & Upload Decrypted Zip
          run: |
