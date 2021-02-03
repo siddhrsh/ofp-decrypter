@@ -43,6 +43,7 @@ jobs:
              sudo -E apt-get -qq update
              sudo pip install docopt
              sudo pip install pycryptodome
+             sudo pip install crypto
              sudo apt-get install unzip
              unzip $ZIP_NAME -d out
              rm -rf $ZIP_NAME
