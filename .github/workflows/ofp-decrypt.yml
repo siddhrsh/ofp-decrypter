@@ -38,12 +38,12 @@ jobs:
             sudo -E apt-get -qq update
             wget $OFP_LINK
              
-       - name: Decrypting Ozip Now
+       - name: Decrypting OFP Now
          run: |
              sudo -E apt-get -qq update
              sudo pip install docopt
+             sudo pip install pycrypto
              sudo pip install pycryptodome
-             sudo pip install crypto
              sudo apt-get install unzip
              unzip $ZIP_NAME -d out
              rm -rf $ZIP_NAME
